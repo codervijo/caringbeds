@@ -1,0 +1,19 @@
+---
+// src/layouts/Layout.astro
+// Shared document chrome for the site. Page-specific <head> content (title,
+// meta, canonical, JSON-LD) is passed in via the named `head` slot so it stays
+// authored in the page file itself — the SEO regression test greps the page's
+// literal source for those tags.
+import "../styles/global.css";
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <slot name="head" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
