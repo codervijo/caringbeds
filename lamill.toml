@@ -1,0 +1,54 @@
+# lamill.toml — per-site config consumed by lamill (portfolio/ops) and rankmill (content/audits).
+# [content] = stable identity, authored by hand. [todo] = volatile work state.
+# rankmill output lives in sites/<domain>/rankmill-output/, not here.
+
+schema = "lamill-toml-v1"
+
+[deploy]
+platform = "cf-pages"
+production_branch = "main"
+custom_domains = [
+    "caringbeds.com",
+]
+
+[index]
+indexnow_key = "76d054bb61786cc2ba4ce6fc28b669a8"
+indexnow_enabled = true
+
+[stack]
+framework = "astro"
+
+# Tracked todos for caringbeds.com. status: "done" | "open".
+[[todo]]
+status = "open"
+priority = "medium"
+task = "Check SEO: GSC indexation + coverage (revisit ~2026-07-19)"
+
+[[todo]]
+status = "open"
+priority = "medium"
+task = "Verify GA4 is receiving data (check Realtime after first traffic)"
+
+[[todo]]
+status = "open"
+priority = "low"
+task = "Confirm GSC verification + sitemap submitted (re-run deploy if it timed out)"
+
+[content]
+# Declarative content identity for this site.
+# Authored by the human; consumed by rankmill to generate drafts and run audits.
+# Leave fields empty until you have a deliberate answer. Empty is better than wrong.
+site_type = "directory"
+primary_keyword = "hospital bed rental near me"
+secondary_keywords = [
+    "does Medicare cover hospital beds",
+    "how much to rent a hospital bed",
+    "hospital bed rental Salinas",
+    "hospital bed rental Monterey",
+    "hospital bed sizes",
+]
+icp = "The primary customer is a 45–65-year-old adult child or spouse who has just learned a parent or partner is coming home from the hospital and needs a bed quickly. They're overwhelmed, unfamiliar with durable medical equipment, and anxious about cost and Medicare — searching \"hospital bed rental near me,\" \"does Medicare cover hospital beds,\" or \"how much to rent a hospital bed\" on a phone. They value reassurance, plain answers, fast setup, and a human they can call over the cheapest possible price. In-market locally, the ideal ICP is within delivery range of the Central Coast; nationally, they're a monetizable lead or affiliate/guide reader anywhere in the US."
+urgency_trigger = "A loved one is being discharged from the hospital and needs a bed immediately."
+penalty = "No bed ready at home — leading to unsafe care, delayed discharge, increased stress, or added cost."
+tone = "plain, reassuring, human"
+law = ""                  # statute or regulation if applicable, else empty
